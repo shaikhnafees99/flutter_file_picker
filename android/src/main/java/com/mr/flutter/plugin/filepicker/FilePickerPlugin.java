@@ -23,6 +23,8 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.PluginRegistry.Registrar;
+
 
 /**
  * FilePickerPlugin
@@ -33,6 +35,7 @@ public class FilePickerPlugin implements MethodChannel.MethodCallHandler, Flutte
     private static final String TAG = "FilePicker";
     private static final String CHANNEL = "miguelruivo.flutter.plugins.filepicker";
     private static final String EVENT_CHANNEL = "miguelruivo.flutter.plugins.filepickerevent";
+    private Registrar registrar; // Added the missing registrar variable
 
     private class LifeCycleObserver
             implements Application.ActivityLifecycleCallbacks, DefaultLifecycleObserver {
